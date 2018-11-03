@@ -39,9 +39,11 @@ class EventDispatcher {
    * @param {*} details
    */
   dispatch(eventName, details = undefined) {
-    this._events[eventName].listeners.forEach((listener) => {
-      listener(details);
-    });
+    if (this._events[eventName]) {
+      this._events[eventName].listeners.forEach((listener) => {
+        listener(details);
+      });
+    }
   }
 }
 
