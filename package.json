@@ -1,8 +1,8 @@
 {
   "name": "@pdw.io/eventdispatcher",
-  "version": "1.0.2",
-  "description": "Super simple/minimal class-based event system.",
-  "main": "source.js",
+  "version": "2.0.0",
+  "description": "Performant event dispatcher.",
+  "main": "main.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pimdewit/eventdispatcher.git"
@@ -10,9 +10,15 @@
   "keywords": [
     "event",
     "dispatcher",
-    "es6",
-    "class"
+    "typescript"
   ],
-  "author": "Pim de Wit <https://pdw.io>",
-  "license": "MIT"
+  "author": "Pim de Wit <https://pim.dev>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc && google-closure-compiler --js=dist/main.js > dist/main.min.js"
+  },
+  "devDependencies": {
+    "google-closure-compiler": "^20211201.0.0",
+    "typescript": "^4.5.4"
+  }
 }

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "outDir": "dist/",
+    "pretty": true,
+    "target": "es2018",
+    "lib": [
+      "es2018"
+    ]
+  },
+  "include": [
+    "main.ts"
+  ],
+  "exclude": ["dist/"]
+}

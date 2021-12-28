@@ -1,5 +1,6 @@
 # EventDispatcher
-Super simple class-level event dispatcher.
+
+Performant, opiniated event dispatcher.
 
 ## Installation
 
@@ -7,34 +8,35 @@ Super simple class-level event dispatcher.
 
 ## Usage
 
-```javascript
-import EventDispatcher from '@pdw.io/eventdispatcher';
+Below is a very minimal example. The main thing to note is that the "event names" are strictly Enum keys, this is where
+the performance comes from.
 
+```typescript
+import { EventDispatcher } from '@pdw.io/eventdispatcher';
 
-class MyAwesomeModule extends EventDispatcher {
-  constructor() {
-    super();
-    
-    
-    setTimeout(() => {
-      this.dispatch('event-name')
-    }, 1000);
-  }
+export enum MyCustomEvent {
+  OPEN,
+  CLOSE,
 }
 
+class Dialog extends EventDispatcher<MyCustomEvent> {
+  private open = false;
 
-const module = new MyAwesomeModule();
-module.addListener('eventname', () => {
-  console.log('hey there.');
-})
+  toggle() {
+    this.open = !this.open;
+    const eventToSend = this.open ? MyCustomEvent.OPEN : MyCustomEvent.CLOSE;
+    this.dispatchEvent(eventToSend);
+  }
+}
 ```
 
+## Minification
 
-## Further explanation
+The full source is imported by default to work nicer with your bundler. Alternatively, there is an es5 & google-closure
+compiled version available at `dist/`.
 
-Use EventDispatcher by extending it with a class.
-EventDispatcher provides the following methods to your class;
-
-`addListener(eventName, callback)`
-`removeListener(eventName, callback)`
-`dispatch(eventName, ?details)`
+| Filename           | Filesize    |
+|--------------------|-------------|
+| `main.ts`          | 1,141 bytes |
+| `dist/main.js`     | 998 bytes   |
+| `dist/main.min.js` | 540 bytes   |
