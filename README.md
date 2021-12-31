@@ -31,11 +31,11 @@ class Dialog extends EventDispatcher<DialogEventName> {
 
 ## Minification
 
-The full source is imported by default to work nicer with your bundler. Alternatively, there is an es5 & google-closure
+The full source is available for import to work nicer with your bundler. Alternatively, there is an es5 & google-closure
 compiled version available at `dist/`.
 
-| Filename           | Filesize    |
-|--------------------|-------------|
-| `main.ts`          | 1,141 bytes |
-| `dist/main.js`     | 998 bytes   |
-| `dist/main.min.js` | 540 bytes   |
+| Filename                           | Filesize    |
+|------------------------------------|-------------|
+| `main.ts`                          | 1,141 bytes |
+| `dist/main.js`                     | 998 bytes   |
+| `dist/main.min.js` (default)       | 540 bytes   |

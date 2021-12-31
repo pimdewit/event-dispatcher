@@ -1,8 +1,9 @@
 {
   "name": "@pdw.io/eventdispatcher",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Performant event dispatcher.",
-  "main": "main.ts",
+  "main": "dist/main.min.js",
+  "types": "dist/main.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pimdewit/eventdispatcher.git"
