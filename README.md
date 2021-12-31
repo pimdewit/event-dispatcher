@@ -8,23 +8,22 @@ Performant, opiniated event dispatcher.
 
 ## Usage
 
-Below is a very minimal example. The main thing to note is that the "event names" are strictly Enum keys, this is where
-the performance comes from.
+Below is a very minimal example. The main thing to note is that the "event names" are strictly numbers (Enum keys in this case), this is where the performance comes from.
 
 ```typescript
 import { EventDispatcher } from '@pdw.io/eventdispatcher';
 
-export enum MyCustomEvent {
+export enum DialogEventName {
   OPEN,
   CLOSE,
 }
 
-class Dialog extends EventDispatcher<MyCustomEvent> {
+class Dialog extends EventDispatcher<DialogEventName> {
   private open = false;
 
   toggle() {
     this.open = !this.open;
-    const eventToSend = this.open ? MyCustomEvent.OPEN : MyCustomEvent.CLOSE;
+    const eventToSend = this.open ? DialogEventName.OPEN : DialogEventName.CLOSE;
     this.dispatchEvent(eventToSend);
   }
 }
