@@ -1,6 +1,6 @@
 # EventDispatcher
 
-Performant, opiniated event dispatcher.
+Performant, opinionated event dispatcher.
 
 ## Installation
 
@@ -27,6 +27,9 @@ class Dialog extends EventDispatcher<DialogEventName> {
     this.dispatchEvent(eventToSend);
   }
 }
+
+const dialog = new Dialog();
+dialog.addEventListener(DialogEventName.OPEN, callback);
 ```
 
 ## Minification
@@ -34,8 +37,8 @@ class Dialog extends EventDispatcher<DialogEventName> {
 The full source is available for import to work nicer with your bundler. Alternatively, there is an es5 & google-closure
 compiled version available at `dist/`.
 
-| Filename                           | Filesize    |
-|------------------------------------|-------------|
-| `main.ts`                          | 1,141 bytes |
-| `dist/main.js`                     | 998 bytes   |
-| `dist/main.min.js` (default)       | 540 bytes   |
+| Filename                 | Filesize    |
+|--------------------------|-------------|
+| `main.ts`                | 1,141 bytes |
+| `dist/main.js` (default) | 998 bytes   |
+| `dist/main.min.js`       | 540 bytes   |

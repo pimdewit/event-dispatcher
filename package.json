@@ -1,8 +1,8 @@
 {
   "name": "@pdw.io/eventdispatcher",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Performant event dispatcher.",
-  "main": "dist/main.min.js",
+  "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "repository": {
     "type": "git",
