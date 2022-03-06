@@ -1,12 +1,14 @@
 {
-  "name": "@pdw.io/eventdispatcher",
-  "version": "2.0.2",
+  "name": "@pdw.io/event-dispatcher",
+  "version": "1.0.0",
   "description": "Performant event dispatcher.",
-  "main": "dist/main.js",
-  "types": "dist/main.d.ts",
+  "source": "src/main.ts",
+  "main": "dist/event-dispatcher.js",
+  "types": "dist/event-dispatcher.d.ts",
+  "module": "dist/event-dispatcher.esm.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pimdewit/eventdispatcher.git"
+    "url": "git+https://github.com/pimdewit/event-dispatcher.git"
   },
   "keywords": [
     "event",
@@ -16,10 +18,12 @@
   "author": "Pim de Wit <https://pim.dev>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc && google-closure-compiler --js=dist/main.js > dist/main.min.js"
+    "build": "parcel build"
   },
   "devDependencies": {
-    "google-closure-compiler": "^20211201.0.0",
-    "typescript": "^4.5.4"
+    "@parcel/packager-ts": "2.3.2",
+    "@parcel/transformer-typescript-types": "2.3.2",
+    "parcel": "^2.3.2",
+    "typescript": "^4.6.2"
   }
 }

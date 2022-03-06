@@ -4,7 +4,7 @@ Performant, opinionated event dispatcher.
 
 ## Installation
 
-`npm install @pdw.io/eventdispatcher`
+`npm install @pdw.io/event-dispatcher`
 
 ## Usage
 
@@ -31,14 +31,3 @@ class Dialog extends EventDispatcher<DialogEventName> {
 const dialog = new Dialog();
 dialog.addEventListener(DialogEventName.OPEN, callback);
 ```
-
-## Minification
-
-The full source is available for import to work nicer with your bundler. Alternatively, there is an es5 & google-closure
-compiled version available at `dist/`.
-
-| Filename                 | Filesize    |
-|--------------------------|-------------|
-| `main.ts`                | 1,141 bytes |
-| `dist/main.js` (default) | 998 bytes   |
-| `dist/main.min.js`       | 540 bytes   |
